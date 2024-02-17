@@ -1,18 +1,26 @@
 "use client"
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const Page = () => {
 
+    const {status} = useSession()
     const router = useRouter()
     const [email, setemail] = useState('')
     const [password, setpasword] = useState('')
     const [error, seterror] = useState('')
     const [login, setlogin] = useState('LOGIN')
 
+    useEffect(() => {
+      if(status === 'authenticated')
+        router.push("/")
+    
+      
+    }, [status])
+    
     
     const handleSubmit = async (e) =>{
       e.preventDefault()
@@ -34,8 +42,8 @@ const Page = () => {
           return
         }
         
-          router.refresh()
-          router.push("/favs")
+        router.refresh()
+        
       } catch (error) {
         console.log(error);
       }
