@@ -35,7 +35,7 @@ const Page = () => {
         }
         
           router.refresh()
-          router.push("/")
+          router.push("/favs")
       } catch (error) {
         console.log(error);
       }
