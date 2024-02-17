@@ -35,7 +35,7 @@ const Page = () => {
         }
         
           router.refresh()
-          router.replace("/")
+          router.push("/")
       } catch (error) {
         console.log(error);
       }
