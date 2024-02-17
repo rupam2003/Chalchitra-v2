@@ -33,8 +33,9 @@ const Page = () => {
           setlogin("LOGIN")
           return
         }
-        router.replace("/")
+        
           router.refresh()
+          router.replace("/")
       } catch (error) {
         console.log(error);
       }
