@@ -2,12 +2,12 @@
 import React from 'react'
 import { FcLike } from "react-icons/fc";
 import { FcLikePlaceholder } from "react-icons/fc"
-
-
+import { useRouter } from 'next/navigation';
 import { useState } from 'react'
+
 const LikeButton = (props) => {
     
-
+    const router = useRouter()
     const [item, setitem] = useState(props.item)
     const [email, setemail] = useState(props.email)
     const [like, setlike] = useState(props.isLiked)
@@ -29,6 +29,7 @@ const LikeButton = (props) => {
           })
           console.log(data);
           setlike(true)
+        router.refresh()
           
     }
 
@@ -49,6 +50,7 @@ const LikeButton = (props) => {
         })
         console.log(data);
         setlike(false)
+        router.refresh()
         
   }
 
