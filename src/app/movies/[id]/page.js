@@ -15,7 +15,7 @@ const page = async ({params}) => {
   const email = session.user.email
   const movieDetails = await getMovieDetails(params.id)
   const movieCredits = await getMovieCredits(params.id)
-  const data = await fetch("https://chalchitra-v2.vercel.app//api/getFavs" , {
+  const data = await fetch("https://chalchitra-v2.vercel.app/api/getFavs" , {
     method:"POST",
     headers:{
       "Content-Type" : "application/json",
