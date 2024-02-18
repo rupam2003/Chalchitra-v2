@@ -8,7 +8,7 @@ const page = async () => {
   const session = await getServerSession(authOptions)
   const  email = session.user.email
     
-    const data = await fetch("https://chalchitra-v2.vercel.app//api/getFavs" , {
+    const data = await fetch("https://chalchitra-v2.vercel.app/api/getFavs" , {
       method:"POST",
       headers:{
         "Content-Type" : "application/json",
