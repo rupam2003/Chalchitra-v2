@@ -15,7 +15,7 @@
 
 body{
 
- height:100%;
+  overflow-x: hidden;
   background-color: #04152d;
   /* background-color: #04152d; */
  /* background-image: linear-gradient(to right,#100e1b,#171635); */
