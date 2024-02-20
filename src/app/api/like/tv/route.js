@@ -5,7 +5,7 @@ import { NextResponse } from "next/server"
 export async function POST(req) {
     try {
         await connectDB()
-        const {email,movie} = await req.json()
+        const {email,item} = await req.json()
         await User.findOneAndUpdate({email},{$push:{tv:item}})
 
 
