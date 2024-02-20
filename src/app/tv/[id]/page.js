@@ -1,15 +1,33 @@
 import React from 'react'
 import { getTvCredits, getTvDetails,getSimilarTv } from '@/app/utils/request'
 import Image from 'next/image'
+import { getServerSession } from 'next-auth'
 import CastSlider from '@/app/Components/CastSlider'
 import Slider from '@/app/Components/Slider'
 import Header from '@/app/Components/Header'
+import LikeButton from '@/app/Components/LikeButton'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import RatingCircle from '@/app/Components/RatingCircle'
 const page = async ({params}) => {
   
+  const session = await getServerSession(authOptions)
+  const email = session.user.email
   const TvDetails = await getTvDetails(params.id)
   const TvCredits = await getTvCredits(params.id)
   const similar = await getSimilarTv(params.id)
+  const data = await fetch("http://localhost:3000/api/getFavs" , {
+    method:"POST",
+    headers:{
+      "Content-Type" : "application/json",
+    },
+    body:JSON.stringify({
+    
+      email
+      
+    }),
+  })
+  const {tv} = await data.json()
+  const isLiked = tv.includes(parseInt(params.id))
   const img_base_url = 'https://image.tmdb.org/t/p/w1280/'
   const img_base_url_lowQuality = 'https://www.themoviedb.org/t/p/w300_and_h450_face'
   return (
@@ -36,6 +54,8 @@ const page = async ({params}) => {
             <div className='flex items-center'>
               <h1 className='mr-2'>Rating :</h1>
               <RatingCircle rating={TvDetails.vote_average.toString().slice(0,3)}/>
+              <LikeButton type = "tv" isLiked = {isLiked}  email={session.user.email} item = {params.id}  />
+
               <h1 className='ml-8'>Seasons : <span className='font-light'>{TvDetails.seasons.length}</span></h1>
 
             </div>
