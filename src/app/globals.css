@@ -28,12 +28,7 @@ body{
 ::-webkit-scrollbar{
   display: none; 
 }
-.loading-bar{
-  background-image: linear-gradient(to right,rgb(59,130,246,0.3),rgb(59,130,246,0.6),rgb(59,130,246,0.3));
-  background-size: 500px 500px;
-  border-radius: 0.75rem;
-  animation: loading 2s infinite linear;
-}
+
 
 button{
   z-index: 10;
@@ -44,19 +39,39 @@ p{
   line-height: 1.2rem;
 }
 
+.dot{
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  margin: 12px;
+  border-radius: 50%;
+  animation: 0.45s loading ease-in-out alternate infinite;
+}
 
-
-
+.dot:nth-child(1){
+  animation-delay: 0.15s;
+}
+.dot:nth-child(2){
+  animation-delay: 0.3s;
+}
+.dot:nth-child(3){
+  animation-delay: 0.45s;
+}
 
 @keyframes loading {
-  0%{
-      background-position: -500px 0;
-  }
   100%{
-    background-position: 500px 0;
-}
+    scale: 0.2;
+  }
+  0%{
+    scale: 1;
+  }
   
 }
+
+
+
+
+
 
 
 @media screen and (max-width: 700px) {
