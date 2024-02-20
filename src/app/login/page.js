@@ -51,17 +51,20 @@ const Page = () => {
     } 
 
   return (
-    <div className='h-screen grid place-items-center'>
+   <div className=' flex flex-col items-center'>
         
         
-        <form onSubmit={handleSubmit} className='text-black flex flex-col'>
-            <input onChange={(e)=>{setemail(e.target.value)}} className='p-1.5 font-semibold rounded-md w-[400px] my-2 bg-gray-300' type='text' placeholder='email' value={email} />
-            <input onChange={(e)=>{setpasword(e.target.value)}} className='p-1.5 font-semibold rounded-md w-[400px] my-2 bg-gray-300' type='text' placeholder='password' value={password}/>
-            <button  className='bg-green-500 p-1.5 font-bold rounded-md w-[400px] my-2' >{login}</button>
+        <form onSubmit={handleSubmit} className='mt-[25vh]   flex flex-col items-center'>
+            <input onChange={(e)=>{setemail(e.target.value)}} className='py-1.5 px-3 outline-none font-semibold rounded-xl w-[300px] my-2 bg-opacity-25 text-white bg-gray-300' type='text' placeholder='Email' value={email} />
+            <input onChange={(e)=>{setpasword(e.target.value)}} className='py-1.5 px-3 outline-none font-semibold rounded-xl w-[300px] my-2 bg-opacity-25 text-white bg-gray-300' type='text' placeholder='Password' value={password}/>
+            <button  className= 'text-black bg-green-500 p-1.5 font-bold rounded-md w-[300px]  my-2' >{login}</button>
         
-        <h1 className='mt-2 font-bold text-center bg-red-600'>{error}</h1>
+
         </form>
-        <Link href={"/register"}>register</Link>
+        <h1>Don't have an account? <Link className=' text-green-600' href={"/register"}> Register</Link></h1>
+
+        <h1 className='mt-2 px-2 rounded-lg font-semibold text-center bg-red-600'>{error}</h1>
+
       
     </div>
   )
