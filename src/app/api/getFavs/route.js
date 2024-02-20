@@ -14,7 +14,7 @@ export async function POST(req) {
 
 
 
-        return NextResponse.json({likes:user.movies})
+        return NextResponse.json({likes:user.movies, tv:user.tv})
         
     } catch (error) {
         return NextResponse.json({messege : "something went wrong"})
