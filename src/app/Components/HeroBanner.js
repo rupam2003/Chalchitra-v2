@@ -18,7 +18,7 @@ const HeroBanner = async () => {
       
       <div className='h-[60%] flex flex-col justify-center items-center'>
         
-        <h1 className='font-bold text-[50px]'>Welcome.{session?.user?.name}</h1>
+        <h1 className='font-bold text-[50px]'>Welcome.</h1>
         <h1 className=' text-center text-2xl'>Millions of movies, TV shows and people to discover. Explore now.</h1>
       </div>
 
