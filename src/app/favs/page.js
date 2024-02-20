@@ -19,7 +19,7 @@ const page = async () => {
         
       }),
     })
-    const {likes} = await data.json()
+    const {likes,tv} = await data.json()
     
   return (
     
@@ -27,6 +27,12 @@ const page = async () => {
     
     {
       likes.map((item)=>{
+        return <h1 key={item}>{item}</h1>
+      })
+    }
+    <h1>tv</h1>
+    {
+      tv.map((item)=>{
         return <h1 key={item}>{item}</h1>
       })
     }
