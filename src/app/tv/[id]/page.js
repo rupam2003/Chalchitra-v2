@@ -15,7 +15,7 @@ const page = async ({params}) => {
   const TvDetails = await getTvDetails(params.id)
   const TvCredits = await getTvCredits(params.id)
   const similar = await getSimilarTv(params.id)
-  const data = await fetch("http://localhost:3000/api/getFavs" , {
+  const data = await fetch("https://chalchitra-v2.vercel.app/api/getFavs" , {
     method:"POST",
     headers:{
       "Content-Type" : "application/json",
