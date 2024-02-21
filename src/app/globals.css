@@ -38,32 +38,22 @@ p{
   font-size: 0.9rem;
   line-height: 1.2rem;
 }
-
-.dot{
-  height: 20px;
-  width: 20px;
-  background-color: white;
-  margin: 12px;
+.loader{
+  height: 50px;
+  width: 50px;
+  
+  border: 4px rgba(0, 0, 0, 0.319) solid ;
+  border-top-color: rgb(28, 109, 202);
   border-radius: 50%;
-  animation: 0.45s loading ease-in-out alternate infinite;
+  animation: loading 1s ease infinite forwards;
 }
 
-.dot:nth-child(1){
-  animation-delay: 0.15s;
-}
-.dot:nth-child(2){
-  animation-delay: 0.3s;
-}
-.dot:nth-child(3){
-  animation-delay: 0.45s;
-}
+
+
 
 @keyframes loading {
   100%{
-    scale: 0.2;
-  }
-  0%{
-    scale: 1;
+    transform: rotate(360deg);
   }
   
 }
