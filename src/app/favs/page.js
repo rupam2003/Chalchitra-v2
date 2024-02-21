@@ -9,7 +9,7 @@ const page = async () => {
   const  email = session.user.email
   const likedMovies = []
   const likedTv = []
-    const data = await fetch("http://localhost:3000/api/getFavs" , {
+    const data = await fetch("https://chalchitra-v2.vercel.app/api/getFavs" , {
       method:"POST",
       headers:{
         "Content-Type" : "application/json",
