@@ -103,3 +103,18 @@ export const getSimilarTv = async (id) =>{
     })
     return data.results;
 }
+
+export const getSingleMovies = async (id) =>{
+    const res = await fetch(`${base_url}/movie/${id}?language=en-US&api_key=${api_key}`);
+    const data = await res.json();
+    console.log(data);
+    return data;
+}
+export const getSingleTv = async (id) =>{
+    const res = await fetch(`${base_url}/tv/${id}?language=en-US&api_key=${api_key}`);
+    const data = await res.json();
+    data.title = data.name
+        data.release_date = data.first_air_date
+    console.log(data);
+    return data;
+}
