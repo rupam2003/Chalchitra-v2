@@ -9,6 +9,8 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import { IoClose } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
+import { FaRegHeart } from "react-icons/fa";
+
 
 
 
@@ -44,15 +46,16 @@ const Header = () => {
             <Image quality={100} src="/images.png" fill alt='logo'/>
           </div>
           </Link>
-          <Link href={"/favs"}>fav</Link>
-          <div>
+          
+          <div className='flex'>
             {
               inputState == "hidden"
               
-              ?<button className='mr-3 ' onClick={handleClick} ><FaMagnifyingGlass className=' text-xl'/></button>
-              :<button className='mr-3' onClick={handleClick} ><IoClose className='relative -bottom-0.5 text-2xl'/></button>
+              ?<button onClick={handleClick} ><FaMagnifyingGlass className=' text-xl'/></button>
+              :<button onClick={handleClick} ><IoClose className='relative  text-2xl'/></button>
             }
-            <button className='mr-2' onClick={signOut}><MdLogout className='relative -bottom-0.5 text-2xl' /></button>
+            <Link className='flex items-center mx-3' href={"/favs"}><FaRegHeart className='text-xl' /></Link>
+            <button className='mr-2' onClick={signOut}><MdLogout className='relative  text-2xl' /></button>
             
           </div>
           
