@@ -31,7 +31,7 @@ const Card = (props) => {
         draggable='false' src={img_base_url + props.movie.poster_path} alt="poster"/>
         </div>  
       }
-      <div className='absolute left-3  bottom-[4.5rem]'>
+      <div className='absolute left-3  top-[12.8rem]'>
         <RatingCircle rating={props.movie.vote_average.toString().slice(0,3)}/>
       </div>
       <h1 className='mt-5 max-w-[150px] text-base line-clamp-2 '>{props.movie.title}</h1>
