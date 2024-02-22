@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import Card from '../Components/Card';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { getSingleMovies, getSingleTv } from '../utils/request';
+import Slider from '../Components/Slider';
 const page = async () => {
     
   const session = await getServerSession(authOptions)
@@ -34,33 +35,8 @@ const page = async () => {
   return (
     
     <div>
-    <h1 className='font-semibold text-2xl text-center my-6'>Favourite Movies</h1>
-    <div className='mb-10 flex flex-wrap justify-center gap-y-6 mx-2 '>
-    {
-      likedMovies.map((movie)=>{
-        return <Card key={movie.id} type={"movies"} movie={movie}/>
-      })
-    }
-
-    
-    
-    </div>
-    <h1 className='font-semibold text-2xl text-center my-6'>Favourite TV Shows</h1>
-    <div className='mb-10 flex flex-wrap justify-center gap-y-6 mx-2 '>
-    {
-      likedTv.map((movie)=>{
-        return <Card key={movie.id} type={"tv"} movie={movie}/>
-      })
-    }
-
-    
-    
-    </div>
-    
-    
-    
-  
-     
+        <Slider type="movies" sliderId={"Favourite Movies"} title = {"Favourite Movies"} movies = {likedMovies}/>
+        <Slider type="tv" sliderId={"Favourite Shows"} title = {"Favourite Shows"} movies = {likedTv}/>
     </div>
   )
 }
