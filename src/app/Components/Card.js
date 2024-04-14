@@ -27,8 +27,8 @@ const Card = (props) => {
           NO POSTER AVAILABLE</div>
 
         :<div className='relative h-[225px] w-[150px]'> 
-        <Image fill quality={100} sizes='100vw 100vw' className=' transition-all rounded-lg ' 
-        draggable='false' src={img_base_url + props.movie.poster_path} alt="poster"/>
+        <img draggable={false} className=' transition-all  rounded-lg ' 
+         src={img_base_url + props.movie.poster_path} alt="poster"/>
         </div>  
       }
       <div className='absolute left-3  top-[12.8rem]'>
