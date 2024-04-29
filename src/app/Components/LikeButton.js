@@ -59,10 +59,10 @@ const LikeButton = (props) => {
         {
         like
         ?  <button onClick={handleRemoveLike} className='   mx-2'>
-          <FaRegBookmark className='text-xl text-green-800'/>
+          <FaBookmark className='text-xl text-green-800'/>
           </button>
       :<button onClick={handleLike} className='mx-2'>
-      <FaBookmark className='text-xl text-green-800'/>
+      <FaRegBookmark className='text-xl text-green-800'/>
       </button>
         }
         
