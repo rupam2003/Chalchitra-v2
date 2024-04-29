@@ -35,8 +35,8 @@ const page = async () => {
   return (
     
     <div>
-        <Slider type="movies" sliderId={"Watchlisted Movies"} title = {"Favourite Movies"} movies = {likedMovies}/>
-        <Slider type="tv" sliderId={"Watchlisted Shows"} title = {"Favourite Shows"} movies = {likedTv}/>
+        <Slider type="movies" sliderId={"Watchlisted Movies"} title = {"Watchlisted Movies"} movies = {likedMovies}/>
+        <Slider type="tv" sliderId={"Watchlisted Shows"} title = {"Watchlisted Shows"} movies = {likedTv}/>
     </div>
   )
 }
