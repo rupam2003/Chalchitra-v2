@@ -10,6 +10,8 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa6";
+
 
 
 
@@ -54,7 +56,7 @@ const Header = () => {
               ?<button onClick={handleClick} ><FaMagnifyingGlass className=' text-xl'/></button>
               :<button onClick={handleClick} ><IoClose className='relative  text-2xl'/></button>
             }
-            <Link className='flex items-center mx-3' href={"/favs"}><FaRegHeart className='text-xl' /></Link>
+            <Link className='flex items-center mx-3' href={"/favs"}><FaRegBookmark className='text-xl' /></Link>
             <button className='mr-2' onClick={signOut}><MdLogout className='relative  text-2xl' /></button>
             
           </div>
