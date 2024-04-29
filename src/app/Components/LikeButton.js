@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import { FcLike } from "react-icons/fc";
-import { FcLikePlaceholder } from "react-icons/fc"
+import { FaRegBookmark } from "react-icons/fa6";
+import { FaBookmark } from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
 
@@ -59,10 +59,10 @@ const LikeButton = (props) => {
         {
         like
         ?  <button onClick={handleRemoveLike} className='   mx-2'>
-          <FcLike className='text-3xl '/>
+          <FcRegBookmark className='text-xl text-green-800'/>
           </button>
       :<button onClick={handleLike} className='mx-2'>
-      <FcLikePlaceholder className='text-3xl'/>
+      <FcBookmark className='text-xl text-green-800'/>
       </button>
         }
         
