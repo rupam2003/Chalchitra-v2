@@ -1,10 +1,11 @@
 
-import React from 'react'
+import React ,{ Suspense } from 'react'
 import { getTopMovies,getTopTv,getTrendingMovies,getTrendingTv } from './utils/request'
 import Card from './Components/Card'
 import Slider from './Components/Slider'
 import Header from './Components/Header'
 import HeroBanner from './Components/HeroBanner'
+import Loading from './Components/Loading'
 
 export const revalidate = 3600
  
@@ -19,7 +20,7 @@ async function page() {
   return (  
     <main className='main-page '>
       
-      
+      <Suspense fallback={<Loading/>} >
       <HeroBanner/>
       <div className=' mb-8'>
       <Slider type="movies" sliderId={"popular"} title = {"Popular Movies"} movies = {trendingmovies}/>
@@ -28,7 +29,7 @@ async function page() {
       <Slider type="tv" sliderId={"topTv"} title = {"Top-Rated Series"} movies = {topTv}/>
 
       </div>
-      
+      </Suspense>
     </main>
     
     
